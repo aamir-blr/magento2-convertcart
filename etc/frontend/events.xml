@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_render_before">
+        <observer name="Convertcart_Analytics" instance="Convertcart\Analytics\Observer\AddScript"/>
+    </event>
+    <event name="controller_action_predispatch_cms_index_index">
+        <observer name="convertcart_analytics_homepage_viewed" instance="Convertcart\Analytics\Observer\HomepageViewed"/>
+    </event>
+    <event name="controller_action_predispatch_cms_page_view">
+        <observer name="convertcart_analytics_contentpage_viewed" instance="Convertcart\Analytics\Observer\ContentpageViewed"/>
+    </event>
+    <event name="controller_action_postdispatch_catalog_product_view">
+        <observer name="convertcart_analytics_product_viewed" instance="Convertcart\Analytics\Observer\Catalog\ProductViewed"/>
+    </event>
+    <event name="controller_action_postdispatch_catalog_category_view">
+        <observer name="convertcart_analytics_category_viewed" instance="Convertcart\Analytics\Observer\Catalog\CategoryViewed"/>
+    </event>
+    <event name="search_query_load_after">
+        <observer name="convertcart_analytics_products_searched" instance="Convertcart\Analytics\Observer\ProductsSearched"/>
+    </event>
+    <event name="controller_action_predispatch_checkout_cart_index">
+        <observer name="convertcart_analytics_cart_viewed" instance="Convertcart\Analytics\Observer\Cart\CartViewed"/>
+    </event>
+    <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="convertcart_analytics_checkout_viewed" instance="Convertcart\Analytics\Observer\Cart\CheckoutViewed"/>
+    </event>
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="convertcart_analytics_order_completed" instance="Convertcart\Analytics\Observer\Cart\OrderCompleted"/>
+    </event>
+    <event name="customer_register_success">
+        <observer name="convertcart_analytics_customer_registered" instance="Convertcart\Analytics\Observer\Customer\CustomerRegistered"/>
+    </event>
+    <event name="customer_login">
+        <observer name="convertcart_analytics_logged_in" instance="Convertcart\Analytics\Observer\Customer\LoggedIn"/>
+    </event>
+    <event name="customer_logout">
+        <observer name="convertcart_analytics_logged_out" instance="Convertcart\Analytics\Observer\Customer\LoggedOut"/>
+    </event>
+</config>
