@@ -3,7 +3,7 @@
     <event name="layout_render_before">
         <observer name="Convertcart_Analytics" instance="Convertcart\Analytics\Observer\AddScript"/>
     </event>
-    <event name="controller_action_predispatch_cms_index_index">
+    <event name="controller_action_postdispatch_cms_index_index">
         <observer name="convertcart_analytics_homepage_viewed" instance="Convertcart\Analytics\Observer\HomepageViewed"/>
     </event>
     <event name="controller_action_predispatch_cms_page_view">
