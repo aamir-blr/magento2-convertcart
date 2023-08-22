@@ -43,7 +43,7 @@ class ProductsSearched implements ObserverInterface
             }
             $this->_ccModel->storeCcEvents($eventName, $eventData);
         } catch (\Exception $e) {
-            $this->_logger->error(null, $e->getMessage());
+            $this->_logger->error($e->getMessage());
         }
     }
 }

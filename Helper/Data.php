@@ -81,6 +81,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function sanitizeParam($param)
     {
+        if ($param === null) {
+            return null;
+        }
         return strip_tags($param);
     }
 }
