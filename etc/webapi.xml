@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/cc/sync-activity/:limit/:id/:type" method="GET">
+		<service class="Convertcart\Analytics\Api\SyncRepositoryInterface" method="getDeletedProduct"/>
+		<resources>
+			<resource ref="Magento_Catalog::products"/>
+		</resources>
+	</route>
+</routes>
